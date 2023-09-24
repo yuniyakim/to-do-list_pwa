@@ -6,19 +6,19 @@ import './App.css'
 
 function App() {
 
-  const [todos, setTodos] = useState<ToDo[]>([])
+  const [toDos, setToDos] = useState<ToDo[]>([])
 
-  const addTodo = (todo: ToDo) : ToDo[] => {
-    const newTodos = [todo, ...todos];
-    setTodos(newTodos);
-    return newTodos;
+  const addToDo = (toDo: ToDo) : ToDo[] => {
+    const newToDos = [toDo, ...toDos];
+    setToDos(newToDos);
+    return newToDos;
   }
 
   return (
     <div>
       <h1>ToDo List</h1>
-      <ToDoForm addTodo={addTodo} />
-      <ToDoList todos={todos} setTodos={setTodos} />
+      <ToDoForm addToDo={addToDo} />
+      <ToDoList toDos={toDos} setToDos={setToDos} />
     </div>
   )
 }

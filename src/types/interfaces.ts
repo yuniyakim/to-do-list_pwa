@@ -5,16 +5,16 @@ export interface ToDo {
 }
 
 export interface ToDoItemProps {
-  todo: ToDo;
+  toDo: ToDo;
   completeToDo: (id: number) => ToDo[];
   deleteToDo: (id: number) => ToDo[];
 }
 
 export interface ToDoListProps {
-  todos: ToDo[];
-  setTodos: React.Dispatch<React.SetStateAction<ToDo[]>>;
+  toDos: ToDo[];
+  setToDos: React.Dispatch<React.SetStateAction<ToDo[]>>;
 }
 
 export interface ToDoFormProps {
-  addTodo: (todo: ToDo) => ToDo[];
+  addToDo: (toDo: ToDo) => ToDo[];
 }

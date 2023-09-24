@@ -1,30 +1,30 @@
 import ToDoItem from "../to-do-item/to-do-item";
 import { ToDo, ToDoListProps } from '../../types/interfaces';
 
-const ToDoList = ({ todos, setTodos }: ToDoListProps) => {
+const ToDoList = ({ toDos, setToDos }: ToDoListProps) => {
 
   const completeToDo = (id: number): ToDo[] => {
-    let updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        todo.completed = !todo.completed;
+    const updatedToDos = toDos.map(toDo => {
+      if (toDo.id === id) {
+        toDo.completed = !toDo.completed;
       }
-      return todo;
+      return toDo;
     })
-    setTodos(updatedTodos);
-    return updatedTodos;
+    setToDos(updatedToDos);
+    return updatedToDos;
   }
 
   const deleteToDo = (id: number): ToDo[] => {
-    setTodos(todos.filter(todo => todo.id !== id));
-    return todos.filter(todo => todo.id !== id);
+    setToDos(toDos.filter(toDo => toDo.id !== id));
+    return toDos.filter(toDo => toDo.id !== id);
   }
 
   return (
-    <div className="todo-container">
-      <ul className="todo-list">
-        {todos.map((todo) => (
-          <ToDoItem key={todo.id}
-            todo={todo}
+    <div className="toDo-container">
+      <ul className="toDo-list">
+        {toDos.map((toDo) => (
+          <ToDoItem key={toDo.id}
+            toDo={toDo}
             completeToDo={completeToDo}
             deleteToDo={deleteToDo} />
         ))}
