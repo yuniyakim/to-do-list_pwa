@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { ToDo } from './types/interfaces';
-import ToDoList from './components/to-do-list/to-do-list'
-import ToDoForm from './components/to-do-form/to-do-form'
+import { ToDoList } from './components/to-do-list/to-do-list'
+import { ToDoForm } from './components/to-do-form/to-do-form'
 import './styles/styles.css'
 
-function App() {
-
+export const App = () => {
   const [toDos, setToDos] = useState<ToDo[]>([])
 
   const addToDo = (toDo: ToDo) : ToDo[] => {
@@ -22,5 +21,3 @@ function App() {
     </div>
   )
 }
-
-export default App

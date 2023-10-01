@@ -1,7 +1,6 @@
 import { ToDoItemProps } from '../../types/interfaces';
 
-const ToDoItem = ({ toDo, completeToDo, deleteToDo }: ToDoItemProps) => {
-
+export const ToDoItem = ({ toDo, completeToDo, deleteToDo }: ToDoItemProps) => {
   const handleComplete = () => {
     completeToDo(toDo.id);
   }
@@ -20,5 +19,3 @@ const ToDoItem = ({ toDo, completeToDo, deleteToDo }: ToDoItemProps) => {
     </div>
   );
 }
-
-export default ToDoItem;

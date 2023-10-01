@@ -1,8 +1,7 @@
-import ToDoItem from "../to-do-item/to-do-item";
+import { ToDoItem } from "../to-do-item/to-do-item";
 import { ToDo, ToDoListProps } from '../../types/interfaces';
 
-const ToDoList = ({ toDos, setToDos }: ToDoListProps) => {
-
+export const ToDoList = ({ toDos, setToDos }: ToDoListProps) => {
   const completeToDo = (id: number): ToDo[] => {
     const updatedToDos = toDos.map(toDo => {
       if (toDo.id === id) {
@@ -30,5 +29,3 @@ const ToDoList = ({ toDos, setToDos }: ToDoListProps) => {
     </div>
   );
 };
-
-export default ToDoList;

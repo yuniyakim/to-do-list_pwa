@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { ToDoFormProps } from '../../types/interfaces';
 
-const ToDoForm = ({ addToDo }: ToDoFormProps) => {
-
+export const ToDoForm = ({ addToDo }: ToDoFormProps) => {
   const [inputText, setInputText] = useState('');
 
   const inputTextHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,5 +24,3 @@ const ToDoForm = ({ addToDo }: ToDoFormProps) => {
     </div>
   );
 };
-
-export default ToDoForm;
