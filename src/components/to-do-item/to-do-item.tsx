@@ -11,14 +11,12 @@ const ToDoItem = ({ toDo, completeToDo, deleteToDo }: ToDoItemProps) => {
   }
 
   return (
-    <div>
-      <div className="toDo">
-        <li className={toDo.completed ? "checked" : ""}>
-          {toDo.content}
-        </li>
-        <button onClick={handleComplete} className="check-btn">{toDo.completed ? "Uncheck" : "Check"}</button>
-        <button className="delete-btn" onClick={handleDelete}>Delete</button>
+    <div className="toDo-container">
+      <input className="toDo-checkbox" type="checkbox" onChange={handleComplete}></input>
+      <div className={'toDo-content ' + (toDo.completed ? 'toDo-content-completed' : '')}>
+        {toDo.content}
       </div>
+      <button className="toDo-button toDo-delete-button" onClick={handleDelete}>Delete</button>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ToDo } from './types/interfaces';
 import ToDoList from './components/to-do-list/to-do-list'
 import ToDoForm from './components/to-do-form/to-do-form'
-import './App.css'
+import './styles/styles.css'
 
 function App() {
 
@@ -15,8 +15,8 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>ToDo List</h1>
+    <div className="toDo-list-app-container">
+      <div className="toDo-list-app-title">ToDo List</div>
       <ToDoForm addToDo={addToDo} />
       <ToDoList toDos={toDos} setToDos={setToDos} />
     </div>

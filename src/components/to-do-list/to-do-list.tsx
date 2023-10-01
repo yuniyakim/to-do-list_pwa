@@ -20,15 +20,13 @@ const ToDoList = ({ toDos, setToDos }: ToDoListProps) => {
   }
 
   return (
-    <div className="toDo-container">
-      <ul className="toDo-list">
-        {toDos.map((toDo) => (
-          <ToDoItem key={toDo.id}
-            toDo={toDo}
-            completeToDo={completeToDo}
-            deleteToDo={deleteToDo} />
-        ))}
-      </ul>
+    <div className="toDo-list-container">
+      {toDos.map((toDo) => (
+        <ToDoItem key={toDo.id}
+          toDo={toDo}
+          completeToDo={completeToDo}
+          deleteToDo={deleteToDo} />
+      ))}
     </div>
   );
 };

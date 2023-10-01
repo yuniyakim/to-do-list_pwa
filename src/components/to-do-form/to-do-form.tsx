@@ -9,8 +9,7 @@ const ToDoForm = ({ addToDo }: ToDoFormProps) => {
     setInputText(e.target.value);
   }
 
-  const submitToDoHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const submitToDoHandler = () => {
     if (inputText) {
       addToDo({ id: Date.now() + Math.random(), content: inputText, completed: false });
     }
@@ -18,12 +17,12 @@ const ToDoForm = ({ addToDo }: ToDoFormProps) => {
   }
 
   return (
-    <form onSubmit={submitToDoHandler}>
-      <input type="text" value={inputText} placeholder="Add ToDo" onChange={inputTextHandler} />
-      <button type="submit" className="add-btn">
+    <div className="toDo-form">
+      <input className="toDo-input" type="text" value={inputText} placeholder="Add ToDo" onChange={inputTextHandler} />
+      <button className="toDo-button toDo-add-button" type="submit" onClick={submitToDoHandler}>
         Add
       </button>
-    </form>
+    </div>
   );
 };
 
